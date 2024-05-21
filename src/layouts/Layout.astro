@@ -1,0 +1,67 @@
+---
+interface Props {
+  title?: string;
+}
+
+import GA from "./GA.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="google-site-verification"
+      content="8tUkVhZkD9TP5wZgsCSA-APg9mDyoIv6f45IKYHlVSI"
+    />
+    <title>{`PaiJi GitHub Page HomePage`}</title>
+  </head>
+  <body class="md:mx-auto max-w-3xl mx-4">
+    <slot />
+    {
+      import.meta.env.PROD && (
+        <script
+          is:inline
+          defer
+          src="https://umami.abo.network/script.js"
+          data-website-id="ff2faf40-71ed-43e7-84ed-ef8e0295201e"
+        />
+      )
+    }
+    {
+      import.meta.env.PROD && (
+        <script
+          is:inline
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GPL8LNKD63"
+        />
+      )
+    }
+    {import.meta.env.PROD && <GA />}
+  </body>
+</html>
+<style is:global>
+  :root {
+    --main-red: 224 128 122;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

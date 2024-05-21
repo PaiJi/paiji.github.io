@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+const linkCls = "hover:text-main-red hover:underline";
+---
+
+<Layout>
+  <main>
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <Image
+        src="https://avatars.githubusercontent.com/u/3956400?v=4"
+        alt="avatar"
+        inferSize={true}
+        class="rounded-full w-48 h-48 shadow"
+      />
+      <div>
+        <h1 class="text-4xl font-bold text-main-red">
+          PaiJi<span class="text-sm font-normal ml-2">JiPai</span><span
+            class="text-sm font-normal ml-1">鸡排</span
+          >
+        </h1>
+
+        <p class="text-base font-bold text-main-red">Web Fullstack Developer</p>
+
+        <p class="mt-4 flex flex-wrap gap-2 text-base text-slate-700">
+          <a class={linkCls} href="https://www.jipai.moe">me</a>
+          <a class={linkCls} href="https://github.com/PaiJi">github</a>
+          <a class={linkCls} href="https://blog.jipai.moe">blog</a>
+          <a class={linkCls} href="https://knowledgebase.jipai.moe"
+            >knowledgebase</a
+          >
+          <!-- <a href="https://www.jipai.moe/labs">projects</a> -->
+          <a class={linkCls} href="https://twitter.com/jipairamen">twitter</a>
+          <a class={linkCls} href="https://acg.mn/@jipai">mastodon</a>
+          <a class={linkCls} href="https://bsky.app/profile/jipai.bsky.social"
+            >bluesky</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <ul class="list-none grid gap-8 mt-8">
+      <li
+        class="bg-main-red/10 p-4 md:p-8 rounded-3xl hover:bg-main-red/20 transition group"
+      >
+        <h2
+          class="text-xl md:text-3xl font-bold text-main-red hover:underline inline-block"
+        >
+          <a href="https://paiji.github.io/NetNewsWire-themes-collection/"
+            >NetNewsWire themes collection</a
+          >
+        </h2>
+        <p class="text-xs md:text-sm text-slate-500">
+          https://paiji.github.io/NetNewsWire-themes-collection/
+        </p>
+        <p class="text-base text-slate-600 mt-4">
+          a collection website of NetNewsWire themes.
+        </p>
+      </li>
+    </ul>
+  </main>
+</Layout>
+
+<style></style>
